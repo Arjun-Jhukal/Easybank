@@ -1,0 +1,34 @@
+.banner {
+  width: 100vw;
+  height: 50vh;
+  background: url(../images/bg-intro-mobile.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  background-color: $VeryLightGray;
+  &_image {
+    position: absolute;
+    top: -120px;
+    z-index: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+  &_content {
+    width: 100%;
+    background-color: $VeryLightGray;
+    margin-top: 100px;
+  }
+}
+.intro_content {
+  background-color: $VeryLightGray;
+  text-align: center;
+  padding-bottom: 30px;
+
+  h1.lg-heading {
+    padding-top: 30px;
+  }
+}

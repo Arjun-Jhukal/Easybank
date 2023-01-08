@@ -1,0 +1,132 @@
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@function set-text-color($color) {
+  @if (lightness($color) >40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  @include flex(row);
+
+  .menu_btn {
+    position: relative;
+    right: 0;
+    z-index: 1;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    @include transition-ease;
+
+    &_burger {
+      position: absolute;
+      right: 0;
+      width: 28px;
+      height: 2px;
+      background-color: set-text-color($GrayishBlue);
+      @include transition-ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        width: 28px;
+        height: 2px;
+        background-color: set-text-color($GrayishBlue);
+        @include transition-ease;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        width: 20px;
+        height: 2px;
+        background-color: set-text-color($GrayishBlue);
+        @include transition-ease;
+      }
+      &.open {
+        transform: rotate(720deg);
+        background-color: transparent;
+
+        &::before {
+          // background-color: $White;
+          transform: rotate(45deg) translate(5px, 8px);
+        }
+        &::after {
+          width: 28px;
+          transform: rotate(-45deg) translate(3px, -7px);
+        }
+      }
+    }
+  }
+
+  .nav {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    visibility: hidden;
+
+    &.open {
+      visibility: visible;
+    }
+
+    &_menu {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      background: $GrayishBlue;
+      list-style: none;
+      padding-right: 1rem;
+      transform: translateY(-100%);
+      @include transition-ease;
+
+      &.open {
+        transform: translateY(0%);
+      }
+    }
+
+    &_items {
+      transform: translateX(100vw);
+      @include transition-ease;
+
+      &.open {
+        transform: translateX(0);
+      }
+      &.active > a {
+        border-bottom: 3px solid $LimeGreen;
+        // border-radius: 50px;
+      }
+    }
+    &_link {
+      display: inline-block;
+      padding: 15px 0;
+      font-size: 1.8rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #fff;
+
+      &:hover {
+        color: $LimeGreen;
+      }
+    }
+  }
+}
+@for $i from 1 through 5 {
+  .nav_items:nth-child(#{$i}) {
+    transition-delay: ($i * 0.1)+0.15s;
+  }
+}

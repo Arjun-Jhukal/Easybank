@@ -1,0 +1,9 @@
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+@mixin flex($direction) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $direction;
+}

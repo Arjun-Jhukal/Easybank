@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  color: $GrayishBlue;
+  margin-bottom: 30px;
+}
+
+a,
+a:visited,
+a:hover {
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+button,
+input {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+ul {
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+  font-size: 1.6rem;
+}

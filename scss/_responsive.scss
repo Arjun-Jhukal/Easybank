@@ -1,0 +1,85 @@
+@include media-md {
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    background-color: $White;
+    display: flex;
+    overflow: hidden;
+
+    &_logo {
+      z-index: 999999;
+    }
+    .menu_btn {
+      visibility: hidden;
+    }
+    & .nav {
+      visibility: visible;
+      top: 0%;
+
+      &_menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        transform: translateY(0);
+        height: 100%;
+        background-color: #fff;
+        text-align: right;
+      }
+      &_items {
+        transform: translateX(0);
+        display: inline-block;
+        padding-right: 15px;
+
+        a {
+          color: $DarkBlue;
+        }
+        &:last-child {
+          margin-right: 50px;
+        }
+      }
+    }
+  }
+  .banner {
+    background: url(../images/bg-intro-desktop.svg);
+    height: 80vh;
+    width: 100%;
+    background-size: cover;
+  }
+  .services {
+    #{&}_wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+  .blogs {
+    #{&}_wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+  .footer {
+    &_wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@include media-lg {
+  .services {
+    #{&}_wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+    }
+  }
+  .blogs {
+    #{&}_wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+    }
+  }
+}
